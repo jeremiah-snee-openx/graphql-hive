@@ -30,6 +30,17 @@ const RedisModel = zod.object({
   REDIS_PASSWORD: emptyString(zod.string().optional()),
 });
 
+const RequestProxyModel = zod.union([
+  zod.object({
+    REQUEST_PROXY: emptyString(zod.literal('0').optional()),
+  }),
+  zod.object({
+    REQUEST_PROXY: zod.literal('1'),
+    REQUEST_PROXY_ENDPOINT: zod.string().min(1),
+    REQUEST_PROXY_SIGNATURE: zod.string().min(1),
+  }),
+]);
+
 const SentryModel = zod.union([
   zod.object({
     SENTRY: emptyString(zod.literal('0').optional()),
@@ -54,6 +65,8 @@ const configs = {
   sentry: SentryModel.safeParse(process.env),
   // eslint-disable-next-line no-process-env
   prometheus: PrometheusModel.safeParse(process.env),
+  // eslint-disable-next-line no-process-env
+  requestProxy: RequestProxyModel.safeParse(process.env),
 };
 
 const environmentErrors: Array<string> = [];
@@ -81,6 +94,7 @@ const base = extractConfig(configs.base);
 const redis = extractConfig(configs.redis);
 const sentry = extractConfig(configs.sentry);
 const prometheus = extractConfig(configs.prometheus);
+const requestProxy = extractConfig(configs.requestProxy);
 
 export const env = {
   environment: base.ENVIRONMENT,
@@ -101,6 +115,13 @@ export const env = {
           labels: {
             instance: prometheus.PROMETHEUS_METRICS_LABEL_INSTANCE ?? 'usage-service',
           },
+        }
+      : null,
+  requestProxy:
+    requestProxy.REQUEST_PROXY === '1'
+      ? {
+          endpoint: requestProxy.REQUEST_PROXY_ENDPOINT,
+          signature: requestProxy.REQUEST_PROXY_SIGNATURE,
         }
       : null,
 } as const;

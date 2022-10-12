@@ -44,6 +44,7 @@ async function main() {
       webhookQueueName: 'webhook',
       maxAttempts: 10,
       backoffDelay: 2000,
+      requestProxy: env.requestProxy,
     });
 
     const stopHeartbeats = env.heartbeat

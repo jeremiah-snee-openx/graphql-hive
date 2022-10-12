@@ -12,6 +12,10 @@ export interface Config {
   webhookQueueName: string;
   maxAttempts: number;
   backoffDelay: number;
+  requestProxy: null | {
+    endpoint: string;
+    signature: string;
+  };
 }
 
 export interface Context {

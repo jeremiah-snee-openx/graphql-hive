@@ -25,6 +25,14 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/dev.js"]
     },
+    "@hive/proxy-script#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/worker.js"]
+    },
+    "@hive/proxy-script#build-local": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/dev.js"]
+    },
     "@hive/app#build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**"]

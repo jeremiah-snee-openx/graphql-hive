@@ -4,6 +4,7 @@ import { RemoteArtifactAsServiceDeployment } from '../utils/remote-artifact-as-s
 import { DeploymentEnvironment } from '../types';
 import { Redis } from './redis';
 import { PackageHelper } from '../utils/pack';
+import type { Proxy } from './cf-proxy';
 
 const commonConfig = new pulumi.Config('common');
 const commonEnv = commonConfig.requireObject<Record<string, string>>('env');
@@ -16,11 +17,13 @@ export function deployWebhooks({
   deploymentEnv,
   redis,
   heartbeat,
+  proxy,
 }: {
   storageContainer: azure.storage.Container;
   packageHelper: PackageHelper;
   deploymentEnv: DeploymentEnvironment;
   redis: Redis;
+  proxy: Proxy;
   heartbeat?: string;
 }) {
   return new RemoteArtifactAsServiceDeployment(
@@ -37,6 +40,9 @@ export function deployWebhooks({
         REDIS_PORT: String(redis.config.port),
         REDIS_PASSWORD: redis.config.password,
         BULLMQ_COMMANDS_FROM_ROOT: 'true',
+        REQUEST_PROXY: '1',
+        REQUEST_PROXY_ENDPOINT: proxy.workerBaseUrl,
+        REQUEST_PROXY_SIGNATURE: proxy.secretSignature,
       },
       readinessProbe: '/_readiness',
       livenessProbe: '/_health',

@@ -16,3 +16,6 @@ This service takes care of delivering WebHooks.
 | `SENTRY_DSN`                        | No       | The DSN for reporting errors to Sentry.                                               | `https://dooobars@o557896.ingest.sentry.io/12121212` |
 | `PROMETHEUS_METRICS`                | No       | Whether Prometheus metrics should be enabled                                          | `1` (enabled) or `0` (disabled)                      |
 | `PROMETHEUS_METRICS_LABEL_INSTANCE` | No       | The instance label added for the prometheus metrics.                                  | `webhooks-service`                                   |
+| `REQUEST_PROXY`                     | No       | Whether Request Proxy should be enabled.                                              | `1` (enabled) or `0` (disabled)                      |
+| `REQUEST_PROXY_ENDPOINT`            | No       | The address                                                                           | `https://proxy.worker.dev`                           |
+| `REQUEST_PROXY_SIGNATURE`           | No       | A secret signature needed to verify the request origin                                | `hbsahdbzxch123`                                     |

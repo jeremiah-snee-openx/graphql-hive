@@ -34,4 +34,8 @@ export type SupergraphOutput = {
 export type ExternalComposition = {
   endpoint: string;
   encryptedSecret: string;
+  proxy: {
+    endpoint: string;
+    signature: string;
+  } | null;
 } | null;
