@@ -10444,7 +10444,12 @@ focus-visible@^5.1.0:
   resolved "https://registry.yarnpkg.com/focus-visible/-/focus-visible-5.2.0.tgz#3a9e41fccf587bd25dcc2ef045508284f0a4d6b3"
   integrity sha512-Rwix9pBtC1Nuy5wysTmKy+UjbDJpIfg8eHjw0rjZ1mX4GNLz1Bmd16uDpI3Gk1i70Fgcs8Csg2lPm8HULFg9DQ==
 
-follow-redirects@^1.14.0, follow-redirects@^1.14.8, follow-redirects@^1.14.9:
+follow-redirects@^1.14.0, follow-redirects@^1.14.9:
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
+  integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
+
+follow-redirects@^1.14.8:
   version "1.15.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.1.tgz#0ca6a452306c9b276e4d3127483e29575e207ad5"
   integrity sha512-yLAMQs+k0b2m7cVxpS1VKJVvoz7SS9Td1zss3XRwXj+ZDH00RJgnuLx7E44wx02kQLrdM3aOOy+FpzS7+8OizA==
@@ -19124,10 +19129,10 @@ superagent@^5.1.1:
     readable-stream "^3.6.0"
     semver "^7.3.2"
 
-supertokens-auth-react@0.26.3:
-  version "0.26.3"
-  resolved "https://registry.yarnpkg.com/supertokens-auth-react/-/supertokens-auth-react-0.26.3.tgz#1d498c6e4a4a51163722e9656f33c3fbfa460efe"
-  integrity sha512-JGYTtVlmblLGuehiYgDfSAlneuuomnFLTEHuQ9a18UVPPpaV7AxnQVu8owxhV2rVhQvLcLMH0/UMo8dqb2VSTw==
+supertokens-auth-react@0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/supertokens-auth-react/-/supertokens-auth-react-0.27.0.tgz#691d1df71b70507020ebf1cc31faacfa152bd1aa"
+  integrity sha512-1TGylB5aoCedFXd5RR5s5oi+lGSE66ynFS7igA2yh/nUXUNU2GlSV6hkrv6zBYjktYkjSBuOhuVaOJejD0njrA==
   dependencies:
     "@emotion/react" "^11.4.1"
     chroma-js "2.1.2"
@@ -19137,7 +19142,7 @@ supertokens-auth-react@0.26.3:
     react-select "5.2.1"
     react-shadow "19.0.3"
     supertokens-js-override "^0.0.4"
-    supertokens-web-js "^0.2.0"
+    supertokens-web-js "^0.3.0"
 
 supertokens-js-override@0.0.4, supertokens-js-override@^0.0.4:
   version "0.0.4"
@@ -19163,18 +19168,37 @@ supertokens-node@12.0.2:
     twilio "^3.76.0"
     verify-apple-id-token "^2.1.0"
 
-supertokens-web-js@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/supertokens-web-js/-/supertokens-web-js-0.2.1.tgz#ac69ff5a75eeabf3175d3ba8ad863297c7e0478e"
-  integrity sha512-qiQO9ydlbeAS8P0/Lrk8S2GkkZ+8jxtDl2ntAaa4facMiaUWeI7/qDt/7fmdKJ2n0ssp9v6WLRRd0CHZi7dF2Q==
+supertokens-node@12.0.5:
+  version "12.0.5"
+  resolved "https://registry.yarnpkg.com/supertokens-node/-/supertokens-node-12.0.5.tgz#111094f354f0eb12ae6fc82af319271b765a55f4"
+  integrity sha512-8uDa8D0pF6+NmWpFOr0e+FoHTD2OsISYXw4cVBCg6h8jlrbdaFAZmpMsbQ8YDiYFDWvIqJKDBjxsVZCVk/gS2g==
+  dependencies:
+    axios "0.21.4"
+    body-parser "1.19.0"
+    co-body "6.1.0"
+    cookie "0.4.0"
+    debug "^4.3.3"
+    jsonwebtoken "^8.5.1"
+    jwks-rsa "^2.0.5"
+    libphonenumber-js "^1.9.44"
+    nodemailer "^6.7.2"
+    psl "1.8.0"
+    supertokens-js-override "^0.0.4"
+    twilio "^3.76.0"
+    verify-apple-id-token "^2.1.0"
+
+supertokens-web-js@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/supertokens-web-js/-/supertokens-web-js-0.3.0.tgz#0549588d294e941ca7465ea7bbfbb235a4792b14"
+  integrity sha512-OWQt+KCzNrssmBOoMRDdQZ3TGM00HO98i0eQDANJKJbNOaJ+I80mCNV3i8dWLqO1AOClzPAt5oLJNimPjCn9TA==
   dependencies:
     supertokens-js-override "0.0.4"
-    supertokens-website "^13.1.0"
+    supertokens-website "^14.0.0"
 
-supertokens-website@^13.1.0:
-  version "13.1.0"
-  resolved "https://registry.yarnpkg.com/supertokens-website/-/supertokens-website-13.1.0.tgz#cfd207399d6b81130427e5214763765cad85cff5"
-  integrity sha512-dX5EhkfdPb899EUgD0yAW9d5hWZbXk3iQ4VrP9oZud+CVjk94J5kpyJXN/MLoUAutwwDXebzb+VhOXM9YAslSQ==
+supertokens-website@^14.0.0:
+  version "14.0.2"
+  resolved "https://registry.yarnpkg.com/supertokens-website/-/supertokens-website-14.0.2.tgz#153e0b27d699154cdf560f236e44edde55908bb6"
+  integrity sha512-zCHRGF8P1lDnSezIsfdh2LqepBX/7/KfQoYJc0m3zzDGKCYdL9KluNwgowgL8lD7dknQjLRq7L9Fn7lTjNf6BQ==
   dependencies:
     browser-tabs-lock "^1.2.14"
     supertokens-js-override "^0.0.4"
